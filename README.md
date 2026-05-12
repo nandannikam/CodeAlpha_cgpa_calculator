@@ -16,7 +16,7 @@ A simple, interactive command-line tool written in C++ to calculate the Grade Po
     - Grade Mapping:'A' = 4.0 |'B' = 3.0|'C'= 2.0 |'D' = 1.0| 'F' = 0.0
 
 2. cgpa(int s) Function
-    - Calculates the final cumulative average by dividing the total_gpa (the sum of all semester GPAs) by the total number of semesters (s).
+    > Calculates the final cumulative average by dividing the total_gpa (the sum of all semester GPAs) by the total number of semesters (s).
 
 3. main() Function
-    - The entry point of the program. It loops through the total number of semesters defined by the user, calls the cal() function, and displays the result for each semester before providing the final CGPA.
+    > The entry point of the program. It loops through the total number of semesters defined by the user, calls the cal() function, and displays the result for each semester before providing the final CGPA.
