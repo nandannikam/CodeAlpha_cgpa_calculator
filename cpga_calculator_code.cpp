@@ -20,29 +20,29 @@ float cal(){
         cin >> credit;
         total_credits += credit;
 
-        char g;
+    char g;
+    while (true) {
         cout << "Enter the grade for course " << i << " - ";
         cin >> g;
 
-
-        if(g == 'A'|| g == 'a'){
-            gp = credit * 4.0;
-        } else if (g == 'B'|| g == 'b'){
-            gp = credit * 3.0;
-        } else if (g == 'C'|| g == 'c'){
-            gp = credit * 2.0;
-        } else if (g == 'D'|| g == 'd'){
-            gp = credit * 1.0;
-        } else if (g == 'F'|| g == 'f'){
-            gp = credit * 0;
-        } else {
-            gp = 0;
-            cout << "Enter a valid grade." << endl;
+        if(g=='A'||g=='a'){ gp = credit * 4.0; break; }
+        else if(g=='B'||g=='b'){ gp = credit * 3.0; break; }
+        else if(g=='C'||g=='c'){ gp = credit * 2.0; break; }
+        else if(g=='D'||g=='d'){ gp = credit * 1.0; break; }
+        else if(g=='F'||g=='f'){ gp = 0; break; }
+        else {
+            cout << "Invalid grade! Try again.\n";
         }
+    }
 
-        cout << "Grade of course" << i << " - " <<g << endl;
+        cout << "Grade of course " << i << " - " <<g << endl;
 
         total_gp += gp;      
+    }
+
+    if (total_credits == 0) {
+        cout << "Error: Total credits cannot be zero." << endl;
+        return 0;
     }
 
     gpa = total_gp / total_credits;
@@ -53,18 +53,25 @@ float cal(){
 void cgpa(int s){
 
     float cgpa = total_gpa/s;
+    cout << " " << endl;
     cout << "CGPA of the candidate is - " << cgpa << endl;
 }
 
 int main(){
 
     int sem;
+
+    cout << "--- WELCOME TO GPA & CGPA CALCULATOR ---" << endl;
+    cout << " " << endl; 
     cout << "Enter the number of semester - ";
     cin >> sem;
 
     for (int l=0; l<sem; l++){
+        cout << " " << endl;
+        cout << "--SEMESTER - " << (l+1) << "--"<< endl;
+        cout << " " << endl;
         total_gpa += cal();
-        cout << "GPA for semester" << l << " - " <<gpa << endl;
+        cout << "GPA for semester " << (l+1) << " - " <<gpa << endl;
     }
 
     cgpa(sem);
