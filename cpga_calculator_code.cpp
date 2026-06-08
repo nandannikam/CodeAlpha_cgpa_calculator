@@ -15,7 +15,7 @@ float cal(){
     float gp;
 
     for (int i=1; i<=courses;i++){
-        int credit;
+        float credit;
         cout << "Enter the credits for the course " << i << " - ";
         cin >> credit;
         total_credits += credit;
@@ -52,9 +52,10 @@ float cal(){
 
 void cgpa(int s){
 
-    float cgpa = total_gpa/s;
+    float final_cgpa = total_gpa/s;
+
     cout << " " << endl;
-    cout << "CGPA of the candidate is - " << cgpa << endl;
+    cout << "CGPA of the candidate is - " << final_cgpa << endl;
 }
 
 int main(){
@@ -65,6 +66,11 @@ int main(){
     cout << " " << endl; 
     cout << "Enter the number of semester - ";
     cin >> sem;
+
+    if (sem <= 0) {
+        cout << "Invalid number of semesters!" << endl;
+        return 0;
+    }
 
     for (int l=0; l<sem; l++){
         cout << " " << endl;
